@@ -10,6 +10,10 @@ public class GameManager : MonoBehaviour
     public Question[] questions;
     private static List<Question> UnansweredQues;
     private Question askedQues;
+    
+
+    [SerializeField]
+    public Text scoreText;
 
     [SerializeField]
     private Text factText;
@@ -23,8 +27,13 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        scoreText.text = "Score: " + PlayerPrefs.GetInt("scoreTracker");
         if (UnansweredQues == null || UnansweredQues.Count == 0) {
             UnansweredQues = questions.ToList<Question>();
+            PlayerPrefs.SetInt("scoreTracker",0);
+            PlayerPrefs.Save();
+
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         }
 
         GetRandomQues();
@@ -48,7 +57,11 @@ public class GameManager : MonoBehaviour
     public void SelectTrueButton()
     {
         if (askedQues.isTrue){
+            PlayerPrefs.SetInt("scoreTracker", PlayerPrefs.GetInt("scoreTracker") + 3);
+            scoreText.text = "Score: " + PlayerPrefs.GetInt("scoreTracker");
+            PlayerPrefs.Save();
             resultText.text="Right";
+
         }
         else {
             resultText.text = "Wrong";
@@ -60,6 +73,9 @@ public class GameManager : MonoBehaviour
     public void SelectFalseButton()
     {
         if (!askedQues.isTrue){
+            PlayerPrefs.SetInt("scoreTracker", PlayerPrefs.GetInt("scoreTracker") + 3);
+            scoreText.text = "Score: " + PlayerPrefs.GetInt("scoreTracker");
+            PlayerPrefs.Save();
             resultText.text = "Right";
         }
         else
