@@ -983,10 +983,10 @@ RectTransform:
   m_Father: {fileID: 1217785375}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 403, y: 187}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchorMin: {x: 0.8032191, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -2, y: 177}
+  m_SizeDelta: {x: -4, y: -364}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &430874494
 MonoBehaviour:
@@ -2192,7 +2192,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -406, y: 176}
+  m_AnchoredPosition: {x: -372, y: 167}
   m_SizeDelta: {x: 116, y: 66}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1527352393
@@ -3019,10 +3019,10 @@ RectTransform:
   m_Father: {fileID: 1324896683}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -32, y: -32}
+  m_AnchorMin: {x: 0.18965518, y: 0}
+  m_AnchorMax: {x: 1, y: 0.86360604}
+  m_AnchoredPosition: {x: -11, y: 4.5}
+  m_SizeDelta: {x: -10, y: -23}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2052282042
 MonoBehaviour:
@@ -3234,9 +3234,23 @@ MonoBehaviour:
   questions:
   - QuesPlace: Paris is called the love city.
     isTrue: 1
-  - QuesPlace: Ethipia is in Asia.
+  - QuesPlace: Ethiopia is in Asia.
     isTrue: 0
   - QuesPlace: Africa is the second most huge continent.
+    isTrue: 1
+  - QuesPlace: Tokyo is the most populous city in the world.
+    isTrue: 1
+  - QuesPlace: El Alto (Bolivia) is lowest city in the world.
+    isTrue: 0
+  - QuesPlace: The lowest city in the world is found in Palestine?
+    isTrue: 1
+  - QuesPlace: Yakutsk (Russia) is the hottest city.
+    isTrue: 0
+  - QuesPlace: Ninety percent of the Earth's population lives in the southern Hemisphere.
+    isTrue: 0
+  - QuesPlace: Australia is wider than the moon.
+    isTrue: 1
+  - QuesPlace: Califonia has more people than canada.
     isTrue: 1
   scoreText: {fileID: 430874494}
   factText: {fileID: 477348700}

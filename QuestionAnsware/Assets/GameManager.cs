@@ -64,6 +64,9 @@ public class GameManager : MonoBehaviour
 
         }
         else {
+            PlayerPrefs.SetInt("scoreTracker", PlayerPrefs.GetInt("scoreTracker") -1);
+            scoreText.text = "Score: " + PlayerPrefs.GetInt("scoreTracker");
+            PlayerPrefs.Save();
             resultText.text = "Wrong";
         }
 
@@ -80,6 +83,9 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            PlayerPrefs.SetInt("scoreTracker", PlayerPrefs.GetInt("scoreTracker") -1);
+            scoreText.text = "Score: " + PlayerPrefs.GetInt("scoreTracker");
+            PlayerPrefs.Save();
             resultText.text = "Wrong";
         }
 
