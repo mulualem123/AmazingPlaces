@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,6 +16,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     private Text resultText;
+
+    [SerializeField]
+    private float delayBetweenQuestions = 1f;
 
     // Start is called before the first frame update
     void Start()
@@ -33,9 +37,14 @@ public class GameManager : MonoBehaviour
 
         factText.text = askedQues.QuesPlace;
 
-        UnansweredQues.RemoveAt(rQIndex);
+       
     }
+    IEnumerator GotoNextQuestion() {
+        UnansweredQues.Remove(askedQues);
 
+        yield return new WaitForSeconds(delayBetweenQuestions);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
     public void SelectTrueButton()
     {
         if (askedQues.isTrue){
@@ -44,6 +53,8 @@ public class GameManager : MonoBehaviour
         else {
             resultText.text = "Wrong";
         }
+
+        StartCoroutine(GotoNextQuestion());
     }
 
     public void SelectFalseButton()
@@ -55,6 +66,8 @@ public class GameManager : MonoBehaviour
         {
             resultText.text = "Wrong";
         }
+
+        StartCoroutine(GotoNextQuestion());
     }
     // Update is called once per frame
 }
